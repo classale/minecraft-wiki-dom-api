@@ -1,4 +1,4 @@
-.no-entity {
+.results {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -6,11 +6,11 @@
     align-items: center;
 }
 
-.no-entity, .no-entity * {
+.results, .results * {
     color: #8C8C8C;
 }
 
-.no-entity img {
+.results img {
     width: max-content;
 }
 
