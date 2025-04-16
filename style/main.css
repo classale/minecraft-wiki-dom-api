@@ -88,6 +88,14 @@ main {
     width: 100%;
 }
 
+input, select {
+    border: none;
+    outline: none;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+}
+
 .burger {
     height: 100%;
     width: max-content;

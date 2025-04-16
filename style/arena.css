@@ -1,0 +1,114 @@
+.divArenaTitre{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.h2Arena{
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--clr-dark);
+}
+
+.divStatut{
+    background-color: var(--clr-green);
+    padding: 2px 15px;
+    border-radius: 8px;
+}
+
+.divStatut span{
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.p-choose{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.p-choose span{
+    font-weight: 500;
+}
+
+.div-filter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 23px;
+}
+
+.div-filter label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+label input{
+    width: 100%;
+    border: none;
+    background-color: white;
+}
+
+.div-btn-spaw button{
+    padding: 12px 50px;
+    border-radius: 999999999999px;
+    border: none;
+    background-color: var(--clr-green);
+    color: white;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 100%;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    color: var(--clr-dark);
+}
+
+.hr{
+    background-color: #3A3A3A;
+}
+
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+thead {
+    background-color: #d1d5d8;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.entity {
+    font-weight: bold;
+}

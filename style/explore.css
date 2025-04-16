@@ -18,39 +18,31 @@ aside img {
     width: 100%;
 }
 
-#searchform {
+#search-form {
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-#searchform .grid {
+#search-form .grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
 }
 
-#searchform input, #searchform select {
-    border: none;
-    outline: none;
-    background-color: #fff;
-    padding: 8px;
-    border-radius: 8px;
-}
-
-#searchform label {
+#search-form label {
     display: flex;
     flex-direction: column;
 }
 
-#searchform .search {
+#search-form .search {
     border-radius: 8px;
     padding-top: 0;
     padding-bottom: 0;
     width: 100%;
 }
 
-#searchform .search input {
+#search-form .search input {
     width: 100%;
 }
 
@@ -86,6 +78,10 @@ section h1 {
         grid-template-columns: 1fr 1fr;
         align-items: center;
     }
+
+    #search-form .grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
 }
 
 @media screen and (min-width: 1080px) {
@@ -93,5 +89,6 @@ section h1 {
         display: grid;
         grid-template-columns: 1fr 480px;
         align-items: center;
+        
     }
 }

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="style/main.css">
         <link rel="stylesheet" href="style/explore.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+        <script src="script/explore.js" defer></script>
         <title>Document</title>
     </head>
     <body>
@@ -77,22 +78,30 @@
                 <h2>List of entities</h2>
                 <hr>
                 <p>Entities are classifie by their nature from the player's perspective. You can search for one or multiples entities by their name using the search bar or simply by filling appropriate filters (type, health, armor, damage, etc..)</p>
-                <form id="searchform">
+                <form id="search-form">
                     <label class="search">
                         <span class="mdi mdi-magnify"></span>
-                        <input type="text" placeholder="search...">
+                        <input type="text" placeholder="search..." name="name">
                     </label>
                     <div class="grid">
                         <label>
                             Classification
                             <select name="classification">
-                                <option value="">Choose...</option>
+                                <option value="">choose</option>
+                                <option value="animal">Animal</option>
+                                <option value="arthropod">Arthropod</option>
+                                <option value="monster">Monster</option>
+                                <option value="aquatic">Aquatic</option>
+                                <option value="undead">Undead</option>
                             </select>
                         </label>
                         <label>
                             Type
                             <select name="type">
-                                <option value="">Choose...</option>
+                                <option value="">choose</option>
+                                <option value="passive">Passive</option>
+                                <option value="neutral">Neutral</option>
+                                <option value="hostile">Hostile</option>
                             </select>
                         </label>
                         <label>
@@ -105,7 +114,7 @@
                         </label>
                         <label>
                             Damage
-                            <input name="damage" type="number" placeholder="2">
+                            <input name="strength" type="number" placeholder="2">
                         </label>
                     </div>
                     <button class="searchbutton">Search</button>

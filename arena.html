@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/reset.css" />
+		<link rel="stylesheet" href="style/normalize.css" />
+		<link rel="stylesheet" href="style/main.css" />
+		<link rel="stylesheet" href="style/explore.css" />
+		<link rel="stylesheet" href="style/arena.css" />
+		<link rel="stylesheet" href="style/detail.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="overlay" id="menuOverlay">
+			<img src="assets/close.png" alt="close" id="close" />
+			<div class="overlay-content">
+				<div class="overlay-item">
+					<img src="assets/boussole.png" alt="boussole" />
+					<p>EXPLORE</p>
+				</div>
+				<div class="overlay-item">
+					<img src="assets/epee.png" alt="epee" />
+					<p>ARENA</p>
+				</div>
+				<div class="overlay-item">
+					<img src="assets/book.png" alt="book" />
+					<p>RULES</p>
+				</div>
+			</div>
+		</div>
+
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="./index.html" class="title">
+							<img src="assets/logo.svg" alt="" class="logo" />
+							<p>Minecraft wiki</p>
+						</a>
+					</li>
+					<li class="pc">
+						<a href="#">
+							<span class="icon mdi mdi-compass"></span>
+							<span class="nav-">EXPLORE</span>
+						</a>
+					</li>
+					<li class="pc">
+						<a href="#">
+							<span class="icon mdi mdi-sword-cross"></span>
+							<span class="nav-">ARENA</span>
+						</a>
+					</li>
+					<li class="pc">
+						<a href="#">
+							<span class="icon mdi mdi-book-open-variant"></span>
+							<span class="nav-">RULES</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<form class="search">
+				<span class="mdi mdi-magnify"></span>
+				<input type="text" class="search" placeholder="search..." />
+			</form>
+			<div class="burger mobile">
+				<img src="assets/burger.svg" alt="" srcset="" />
+			</div>
+		</header>
+
+		<main>
+			<section class="content">
+				<div class="divArenaTitre">
+					<h2 class="h2Arena">Arena</h2>
+					<div class="divStatut">
+						<span>OPEN</span>
+					</div>
+				</div>
+				<p class="p-choose">
+					Choose an entity to spawn inside the <span>Arena</span>.
+				</p>
+				<div>
+					<div class="div-filter">
+						<label>
+							entity
+							<select name="selectEntity" id="">
+								<option value="Choose">Choose</option>
+							</select>
+						</label>
+
+						<label>
+							X Coordinate
+							<input type="text" placeholder="255.2" />
+						</label>
+
+						<label>
+							Y Coordinate
+							<input type="text" placeholder="126.7" />
+						</label>
+					</div>
+				</div>
+
+				<div class="div-btn-spaw">
+					<button>SPAWN</button>
+				</div>
+
+				<h3>Arena entities</h3>
+
+				<hr class="hr" />
+
+				<p class="p-choose">
+					This list describe all entities registered inside the
+					<span>Arena</span>.
+				</p>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Ent..</th>
+							<th>Na..</th>
+							<th>X</th>
+							<th>Y</th>
+							<th>Stre..</th>
+							<th>del</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><img src="assets/mob.svg" alt="" /></td>
+							<td>Armadillo</td>
+							<td>155.6</td>
+							<td>245.2</td>
+							<td>0</td>
+							<td><button class="delete-btn">DELETE</button></td>
+						</tr>
+						<tr>
+							<td><img src="assets/mob-zombi.svg" alt="" /></td>
+							<td>Zombie</td>
+							<td>158.2</td>
+							<td>248.2</td>
+							<td>12</td>
+							<td><button class="delete-btn">DELETE</button></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3>Arena map</h3>
+
+				<hr class="hr" />
+
+				<img src="assets/arena-map.png" alt="" />
+			</section>
+		</main>
+		<script src="main.js"></script>
+	</body>
+</html>
