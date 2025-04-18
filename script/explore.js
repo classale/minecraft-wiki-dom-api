@@ -1,23 +1,39 @@
 const searchForm = document.getElementById("search-form")
-const results = document.querySelector(".results")
+const mobs = document.querySelector(".mobs")
+const nothingfound = document.querySelector(".nothingfound")
 
 const API_URL = "http://192.168.1.15:3000/v1"
 
 function createCard(el) {
-    const div = document.createElement("div")
-    div.appendChild(Object.assign(document.createElement("p"), {innerHTML: el.name, className: "entity-name"}));
-    div.appendChild(Object.assign(document.createElement("img"), {src: el.image}));
-    //div.appendChild(Object.assign(document.createElement("pre"), {innerHTML: JSON.stringify(el)}));
+    //const diarticlevarticle = document.createElement("div")
+    const article = document.createElement("article")
+    article.appendChild(Object.assign(document.createElement("div"), {innerHTML: el.name, className: `box ${el.type}`}));
+    console.log(article)
+    article.appendChild(Object.assign(document.createElement("img"), {src: el.image}));
+    const info = Object.assign(document.createElement("div"), {classList: "info"})
+    info.appendChild(Object.assign(document.createElement("p"), {innerHTML: el.classification}))
+    info.appendChild(Object.assign(document.createElement("p"), {innerHTML: el.type}))
+    //article.appendChild(Object.assign(document.createElement("pre"), {innerHTML: JSON.stringify(el)}));
+    const aaa = document.createElement("div")
+    aaa.appendChild(info)
+    aaa.appendChild(document.createElement("hr"))
+    const seemore = Object.assign(document.createElement("div"), {className: `box ${el.type}`})
+    seemore.appendChild(Object.assign(document.createElement("a"), {href: `./detail.html?id=${el.id}`, innerHTML: "SEE MORE"}));
+    aaa.appendChild(seemore)
+    article.appendChild(aaa)
 
-    return div;
+    return article;
 }
 
 async function updateSearchField(searchForm) {
+    mobs.innerHTML = "";
     const query = Array.from(new FormData(searchForm).entries().filter(([_, value]) => !!value).map(([key, value]) => `${key}=${value}`)).join("&");
     const ans = await fetch(`${API_URL}/entities?${query}`);
     const json = await ans.json()
+    nothingfound.remove()
     for(let el of json) {
-        results.appendChild(createCard(el))
+        console.log(el)
+        mobs.appendChild(createCard(el))
     }
 }
 

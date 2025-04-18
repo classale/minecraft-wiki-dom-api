@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="style/explore.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="style/detail.css" />
+  <script src="./script/detail.js" type="module" defer></script>
   <title>Document</title>
 </head>
 <body>
@@ -72,7 +73,7 @@
     <section class="content">
       <p class="breadcrumb">in: 
         <span class="link">Minecraft Entities</span>, 
-        <span class="link">Animal mobs</span>
+        <span class="link"><span id="category-classification"></span>Animal mobs</span>
       </p>
 
       <h2>Armadillo</h2>
@@ -93,21 +94,21 @@
 
         <div class="card">
           <div class="card-title">
-            <img src="assets/icon-mob.svg" alt="icon" />
-            <p>Armadillo</p>
+            <img id="title-icon" alt="icon" />
+            <p id="title-name">Armadillo</p>
           </div>
 
           <img src="assets/mob.svg" alt="mob" class="mob-img" />
 
-          <div class="stat"><p class="label blue">Health</p><div class="value"><span>6</span><img src="assets/coeur.svg" /></div></div>
+          <div class="stat"><p class="label blue">Health</p><div class="value"><span id="health">6</span><img src="assets/coeur.svg" /></div></div>
           <hr />
-          <div class="stat"><p class="label">Armor</p><div class="value"><span>0</span><img src="assets/armure.svg" /></div></div>
+          <div class="stat"><p class="label">Armor</p><div class="value"><span id="armor">0</span><img src="assets/armure.svg" /></div></div>
           <hr />
-          <div class="stat"><p class="label">Damage</p><div class="value"><span>0</span><img src="assets/coeur.svg" /></div></div>
+          <div class="stat"><p class="label">Damage</p><div class="value"><span id="damage">0</span><img src="assets/coeur.svg" /></div></div>
           <hr />
-          <div class="stat"><p class="label">Classification</p><span class="blue-link">Animal</span></div>
+          <div class="stat"><p class="label">Classification</p><span class="blue-link" id="classification">Animal</span></div>
           <hr />
-          <div class="stat"><p class="label">Behavior</p><span>Passive</span></div>
+          <div class="stat"><p class="label">Behavior</p><span id="behavior">Passive</span></div>
           <hr />
 
           <button class="btn">detail</button>
@@ -115,8 +116,8 @@
           <div class="size">
             <p class="label">Size</p>
             <div class="hw">
-              <p>Height: <span>0.65</span> blocks</p>
-              <p>Width: <span>0.7</span> blocks</p>
+              <p>Height: <span id="height">0.65</span> blocks</p>
+              <p>Width: <span id="width">0.7</span> blocks</p>
             </div>
           </div>
         </div>
