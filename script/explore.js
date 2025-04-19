@@ -2,7 +2,7 @@ const searchForm = document.getElementById("search-form")
 const mobs = document.querySelector(".mobs")
 const nothingfound = document.querySelector(".nothingfound")
 
-const API_URL = "http://192.168.1.15:3000/v1"
+const API_URL = "http://51.38.232.174:3000/v1"
 
 function createCard(el) {
     //const diarticlevarticle = document.createElement("div")
@@ -30,7 +30,7 @@ async function updateSearchField(searchForm) {
     const query = Array.from(new FormData(searchForm).entries().filter(([_, value]) => !!value).map(([key, value]) => `${key}=${value}`)).join("&");
     const ans = await fetch(`${API_URL}/entities?${query}`);
     const json = await ans.json()
-    nothingfound.remove()
+    nothingfound.style.display = json.length == 0 ? "flex" : "none";
     for(let el of json) {
         console.log(el)
         mobs.appendChild(createCard(el))

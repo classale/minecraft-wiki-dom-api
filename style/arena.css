@@ -38,14 +38,21 @@
     font-weight: 500;
 }
 
-.div-filter{
+#form-spawn {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    display: grid;
+    gap: 16px;
+}
+
+#form-spawn > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 23px;
 }
 
-.div-filter label{
+#form-spawn > div label{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,7 +65,7 @@ label input{
     background-color: white;
 }
 
-.div-btn-spaw button{
+.div-btn-spawn button{
     padding: 12px 50px;
     border-radius: 999999999999px;
     border: none;
@@ -93,7 +100,6 @@ thead {
 
 th, td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
 }
 
 .delete-btn {
@@ -112,3 +118,35 @@ th, td {
 .entity {
     font-weight: bold;
 }
+
+.overlay {
+    display: none;
+}
+
+tr {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+thead tr th {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+
+td, th {
+    text-align: center;
+    font-size: 16px;
+}
+
+td img, th img {
+    height: 28px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

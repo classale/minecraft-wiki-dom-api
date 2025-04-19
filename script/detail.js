@@ -1,4 +1,4 @@
-const API_URL = "http://192.168.1.15:3000/v1"
+const API_URL = "http://51.38.232.174:3000/v1"
 const mob = await (await fetch(`${API_URL}/entities/${new URLSearchParams(location.search).get("id")}`)).json()
 
 const desc = document.querySelector(".desc p")
@@ -14,7 +14,6 @@ const categoryClassification = document.querySelector("#category-classification"
 const behavior = document.querySelector("#behavior")
 const width = document.querySelector("#width")
 const height = document.querySelector("#height")
-console.log(mob)
 
 desc.innerHTML = mob.description
 name.innerHTML = mob.name

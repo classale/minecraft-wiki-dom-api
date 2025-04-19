@@ -1,130 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="style/reset.css">
-        <link rel="stylesheet" href="style/normalize.css">
-        <link rel="stylesheet" href="style/main.css">
-        <link rel="stylesheet" href="style/explore.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="style/detail.css" />
-  <script src="./script/detail.js" type="module" defer></script>
-  <title>Document</title>
-</head>
-<body>
-  <div class="overlay" id="menuOverlay">
-    <img src="assets/close.png" alt="close" id="close" />
-    <div class="overlay-content">
-      <div class="overlay-item">
-        <img src="assets/boussole.png" alt="boussole" />
-        <p>EXPLORE</p>
-      </div>
-      <div class="overlay-item">
-        <img src="assets/epee.png" alt="epee" />
-        <p>ARENA</p>
-      </div>
-      <div class="overlay-item">
-        <img src="assets/book.png" alt="book" />
-        <p>RULES</p>
-      </div>
-    </div>
-  </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/reset.css" />
+		<link rel="stylesheet" href="style/normalize.css" />
+		<link rel="stylesheet" href="style/main.css" />
+		<link rel="stylesheet" href="style/explore.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+		/>
+		<link rel="stylesheet" href="style/detail.css" />
+		<script src="./script/detail.js" type="module" defer></script>
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="overlay" id="menuOverlay">
+			<img src="assets/close.png" alt="close" id="close" />
+			<div class="overlay-content">
+				<div class="overlay-item">
+					<img src="assets/boussole.png" alt="boussole" />
+					<p>EXPLORE</p>
+				</div>
+				<div class="overlay-item">
+					<img src="assets/epee.png" alt="epee" />
+					<p>ARENA</p>
+				</div>
+				<div class="overlay-item">
+					<img src="assets/book.png" alt="book" />
+					<p>RULES</p>
+				</div>
+			</div>
+		</div>
 
-  <header>
-    <nav>
-        <ul>
-            <li>
-                <a href="./index.html" class="title">
-                    <img src="assets/logo.svg" alt="" class="logo">
-                    <p>Minecraft wiki</p>
-                </a>
-            </li>
-            <li class="pc">
-                <a href="#">
-                    <span class="icon mdi mdi-compass"></span>
-                    <span class="nav-">EXPLORE</span>
-                </a>
-            </li>
-            <li class="pc">
-                <a href="#">
-                    <span class="icon mdi mdi-sword-cross"></span>
-                    <span class="nav-">ARENA</span>
-                </a>
-            </li>
-            <li class="pc">
-                <a href="#">
-                    <span class="icon mdi mdi-book-open-variant"></span>
-                    <span class="nav-">RULES</span>
-                </a>
-            </li>
-        </ul>
-      </nav>
-      <form class="search">
-        <span class="mdi mdi-magnify"></span>
-        <input type="text" class="search" placeholder="search...">
-      </form>
-    <div class="burger mobile">
-        <img src="assets/burger.svg" alt="" srcset="">
-    </div>
-  </header>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="./index.html" class="title">
+							<img src="assets/logo.svg" alt="" class="logo" />
+							<p>Minecraft wiki</p>
+						</a>
+					</li>
+					<li class="pc">
+						<a href="./index.html">
+							<span class="icon mdi mdi-compass"></span>
+							<span>EXPLORE</span>
+						</a>
+					</li>
+					<li class="pc">
+						<a href="./arena.html">
+							<span class="icon mdi mdi-sword-cross"></span>
+							<span>ARENA</span>
+						</a>
+					</li>
+					<li class="pc">
+						<a href="./rules.html">
+							<span class="icon mdi mdi-book-open-variant"></span>
+							<span>RULES</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<form class="search">
+				<span class="mdi mdi-magnify"></span>
+				<input type="text" class="search" placeholder="search..." />
+			</form>
+			<div class="burger mobile">
+				<img src="assets/burger.svg" alt="" srcset="" />
+			</div>
+		</header>
 
-  <main>
-    <section class="content">
-      <p class="breadcrumb">in: 
-        <span class="link">Minecraft Entities</span>, 
-        <span class="link"><span id="category-classification"></span>Animal mobs</span>
-      </p>
+		<main>
+			<section class="content">
+				<p class="breadcrumb">
+					in: <span class="link">Minecraft Entities</span>,
+					<span class="link"
+						><span id="category-classification"></span>Animal
+						mobs</span
+					>
+				</p>
 
-      <h2>Armadillo</h2>
+				<h2>Armadillo</h2>
 
-      <div class="info">
-        <img src="assets/arbuste.svg" alt="arbuste" class="arbusteImg"/>
-        <div>
-          <p class="info-title">This article is a <span class="highlight">stub</span>.</p>
-          <p class="info-sub">You can help by expanding it</p>
-        </div>
-      </div>
+				<div class="info">
+					<img
+						src="assets/arbuste.svg"
+						alt="arbuste"
+						class="arbusteImg"
+					/>
+					<div>
+						<p class="info-title">
+							This article is a
+							<span class="highlight">stub</span>.
+						</p>
+						<p class="info-sub">You can help by expanding it</p>
+					</div>
+				</div>
 
-      <div class="desc">
-        <p>
-            <span class="spanDesc">Armadillo</span> is a mob that spawns in warm biomes. Spider eyes, brushes, and lead can be used on the armadillo to breed, brush, or lead it respectively.<br><br>
-            When a player is sprinting, mounting, or causes harm to an armadillo, or when an undead hostile mob is nearby, it rolls up into a cube-like shape to protect itself from harm.
-        </p>
+				<div class="desc">
+					<p>
+						<span class="spanDesc">Armadillo</span> is a mob that
+						spawns in warm biomes. Spider eyes, brushes, and lead
+						can be used on the armadillo to breed, brush, or lead it
+						respectively.<br /><br />
+						When a player is sprinting, mounting, or causes harm to
+						an armadillo, or when an undead hostile mob is nearby,
+						it rolls up into a cube-like shape to protect itself
+						from harm.
+					</p>
 
-        <div class="card">
-          <div class="card-title">
-            <img id="title-icon" alt="icon" />
-            <p id="title-name">Armadillo</p>
-          </div>
+					<div class="card">
+						<div class="card-title">
+							<img id="title-icon" alt="icon" />
+							<p id="title-name">Armadillo</p>
+						</div>
 
-          <img src="assets/mob.svg" alt="mob" class="mob-img" />
+						<img src="assets/mob.svg" alt="mob" class="mob-img" />
 
-          <div class="stat"><p class="label blue">Health</p><div class="value"><span id="health">6</span><img src="assets/coeur.svg" /></div></div>
-          <hr />
-          <div class="stat"><p class="label">Armor</p><div class="value"><span id="armor">0</span><img src="assets/armure.svg" /></div></div>
-          <hr />
-          <div class="stat"><p class="label">Damage</p><div class="value"><span id="damage">0</span><img src="assets/coeur.svg" /></div></div>
-          <hr />
-          <div class="stat"><p class="label">Classification</p><span class="blue-link" id="classification">Animal</span></div>
-          <hr />
-          <div class="stat"><p class="label">Behavior</p><span id="behavior">Passive</span></div>
-          <hr />
+						<div class="stat">
+							<p class="label blue">Health</p>
+							<div class="value">
+								<span id="health">6</span
+								><img src="assets/coeur.svg" />
+							</div>
+						</div>
+						<hr />
+						<div class="stat">
+							<p class="label">Armor</p>
+							<div class="value">
+								<span id="armor">0</span
+								><img src="assets/armure.svg" />
+							</div>
+						</div>
+						<hr />
+						<div class="stat">
+							<p class="label">Damage</p>
+							<div class="value">
+								<span id="damage">0</span
+								><img src="assets/coeur.svg" />
+							</div>
+						</div>
+						<hr />
+						<div class="stat">
+							<p class="label">Classification</p>
+							<span class="blue-link" id="classification"
+								>Animal</span
+							>
+						</div>
+						<hr />
+						<div class="stat">
+							<p class="label">Behavior</p>
+							<span id="behavior">Passive</span>
+						</div>
+						<hr />
 
-          <button class="btn">detail</button>
+						<button class="btn">detail</button>
 
-          <div class="size">
-            <p class="label">Size</p>
-            <div class="hw">
-              <p>Height: <span id="height">0.65</span> blocks</p>
-              <p>Width: <span id="width">0.7</span> blocks</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+						<div class="size">
+							<p class="label">Size</p>
+							<div class="hw">
+								<p>
+									Height: <span id="height">0.65</span> blocks
+								</p>
+								<p>Width: <span id="width">0.7</span> blocks</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
 
-  <script src="main.js"></script>
-</body>
+		<script src="main.js"></script>
+	</body>
 </html>

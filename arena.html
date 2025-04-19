@@ -6,9 +6,8 @@
 		<link rel="stylesheet" href="style/reset.css" />
 		<link rel="stylesheet" href="style/normalize.css" />
 		<link rel="stylesheet" href="style/main.css" />
-		<link rel="stylesheet" href="style/explore.css" />
 		<link rel="stylesheet" href="style/arena.css" />
-		<link rel="stylesheet" href="style/detail.css" />
+		<script src="script/arena.js" type="module" defer></script>
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
@@ -44,21 +43,21 @@
 						</a>
 					</li>
 					<li class="pc">
-						<a href="#">
+						<a href="./index.html">
 							<span class="icon mdi mdi-compass"></span>
-							<span class="nav-">EXPLORE</span>
+							<span>EXPLORE</span>
 						</a>
 					</li>
 					<li class="pc">
-						<a href="#">
+						<a href="./arena.html">
 							<span class="icon mdi mdi-sword-cross"></span>
-							<span class="nav-">ARENA</span>
+							<span>ARENA</span>
 						</a>
 					</li>
 					<li class="pc">
-						<a href="#">
+						<a href="./rules.html">
 							<span class="icon mdi mdi-book-open-variant"></span>
-							<span class="nav-">RULES</span>
+							<span>RULES</span>
 						</a>
 					</li>
 				</ul>
@@ -84,28 +83,39 @@
 					Choose an entity to spawn inside the <span>Arena</span>.
 				</p>
 				<div>
-					<div class="div-filter">
-						<label>
-							entity
-							<select name="selectEntity" id="">
-								<option value="Choose">Choose</option>
-							</select>
-						</label>
+					<form id="form-spawn">
+						<div>
+							<label>
+								entity
+								<select name="entityId" id="" required>
+									<option value="">Choose</option>
+								</select>
+							</label>
 
-						<label>
-							X Coordinate
-							<input type="text" placeholder="255.2" />
-						</label>
+							<label>
+								X Coordinate
+								<input
+									type="text"
+									name="x"
+									placeholder="255.2"
+									required
+								/>
+							</label>
 
-						<label>
-							Y Coordinate
-							<input type="text" placeholder="126.7" />
-						</label>
-					</div>
-				</div>
-
-				<div class="div-btn-spaw">
-					<button>SPAWN</button>
+							<label>
+								Z Coordinate
+								<input
+									type="text"
+									name="z"
+									placeholder="126.7"
+									required
+								/>
+							</label>
+						</div>
+						<div class="div-btn-spawn">
+							<button>SPAWN</button>
+						</div>
+					</form>
 				</div>
 
 				<h3>Arena entities</h3>
@@ -120,32 +130,15 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Ent..</th>
-							<th>Na..</th>
+							<th>Entity</th>
+							<th>Name</th>
 							<th>X</th>
 							<th>Y</th>
-							<th>Stre..</th>
+							<th>Strength</th>
 							<th>del</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td><img src="assets/mob.svg" alt="" /></td>
-							<td>Armadillo</td>
-							<td>155.6</td>
-							<td>245.2</td>
-							<td>0</td>
-							<td><button class="delete-btn">DELETE</button></td>
-						</tr>
-						<tr>
-							<td><img src="assets/mob-zombi.svg" alt="" /></td>
-							<td>Zombie</td>
-							<td>158.2</td>
-							<td>248.2</td>
-							<td>12</td>
-							<td><button class="delete-btn">DELETE</button></td>
-						</tr>
-					</tbody>
+					<tbody></tbody>
 				</table>
 
 				<h3>Arena map</h3>
