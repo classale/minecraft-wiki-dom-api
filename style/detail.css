@@ -181,19 +181,6 @@ h2 {
   color: var(--clr-dark);
 }
 
-.overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--clr-overlay);
-  display: none;
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 #close {
   position: absolute;
   top: 20px;

@@ -3,9 +3,11 @@ const API_URL = "http://51.38.232.174:3000/v1"
 
 const spawnForm = document.getElementById("form-spawn")
 const select = document.querySelector("select")
+const statusDiv = document.querySelector(".divStatut")
 
 const entitiesRes = await fetch(`${API_URL}/arena/entities`)
 const entities = await entitiesRes.json()
+
 
 for(let entity of await (await fetch(`${API_URL}/entities`)).json()) {
     select.appendChild(Object.assign(document.createElement("option"), {innerHTML: entity.name, value: entity.id}))
@@ -57,6 +59,19 @@ spawnForm.addEventListener("submit", async e => {
         tbody.append(await createTableElement(arenaMobData))
     }
 })
+
+
+const arenaStatus = await fetch(`${API_URL}/arena`);
+const arenaData = await arenaStatus.json()
+
+statusDiv.innerHTML = arenaData.status
+statusDiv.classList.add(arenaData.status)
+
+if(arenaData.status == "close") {
+    for(let field of spawnForm.querySelectorAll("select, input, button")) {
+        field.disabled = true;
+    }
+}
 
 /*
 <tr>

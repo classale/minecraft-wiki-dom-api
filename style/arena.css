@@ -13,10 +13,20 @@
     color: var(--clr-dark);
 }
 
-.divStatut{
-    background-color: var(--clr-green);
+.divStatut {
     padding: 2px 15px;
     border-radius: 8px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.divStatut.open {
+    background-color: var(--clr-green);
+}
+
+
+.divStatut.close {
+    background-color: var(--clr-hostile);
 }
 
 .divStatut span{
@@ -56,7 +66,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
     gap: 8px;
+}
+
+#form-spawn > div label p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 label input{
@@ -117,10 +134,6 @@ th, td {
 
 .entity {
     font-weight: bold;
-}
-
-.overlay {
-    display: none;
 }
 
 tr {

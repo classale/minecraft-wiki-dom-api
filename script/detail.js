@@ -31,7 +31,6 @@ width.innerHTML = mob.width
 height.innerHTML = mob.height
 
 document.querySelector(".card").classList.add(mob.type)
-document.querySelector(".card-title").classList.add(mob.type)
 document.querySelector(".btn").classList.add(mob.type)
 
 for(let hr of document.querySelectorAll("hr")) hr.classList.add(mob.type)

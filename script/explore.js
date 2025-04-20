@@ -2,6 +2,9 @@ const searchForm = document.getElementById("search-form")
 const mobs = document.querySelector(".mobs")
 const nothingfound = document.querySelector(".nothingfound")
 
+document.querySelector("#search-form #search").value = new URLSearchParams(location.search).get("name")
+console.log(new URLSearchParams(location.search).get("name"))
+
 const API_URL = "http://51.38.232.174:3000/v1"
 
 function createCard(el) {
@@ -27,7 +30,7 @@ function createCard(el) {
 
 async function updateSearchField(searchForm) {
     mobs.innerHTML = "";
-    const query = Array.from(new FormData(searchForm).entries().filter(([_, value]) => !!value).map(([key, value]) => `${key}=${value}`)).join("&");
+    const query = Array.from(new FormData(searchForm).entries()).filter(([_, value]) => !!value).map(([key, value]) => `${key}=${value}`).join("&");
     const ans = await fetch(`${API_URL}/entities?${query}`);
     const json = await ans.json()
     nothingfound.style.display = json.length == 0 ? "flex" : "none";
