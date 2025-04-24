@@ -20,6 +20,11 @@
     color: white;
 }
 
+canvas {
+    background-color: #fff;
+    border: 1px solid black;
+}
+
 .divStatut.open {
     background-color: var(--clr-green);
 }

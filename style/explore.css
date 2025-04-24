@@ -132,7 +132,9 @@ aside img {
 }
 
 .mobs {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     grid-template-columns: 1fr;
     gap: 16px;
 }
@@ -144,26 +146,15 @@ aside img {
         align-items: center;
     }
 
-    .mobs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-    }
-
     #search-form .grid {
         grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 1440px) {
     article {
         display: grid;
         grid-template-columns: 1fr 480px;
         align-items: center;
-    }
-    .mobs {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 16px;
     }
 }

@@ -5,6 +5,10 @@ const spawnForm = document.getElementById("form-spawn")
 const select = document.querySelector("select")
 const statusDiv = document.querySelector(".divStatut")
 
+const canvas = document.querySelector("canvas")
+canvas.width = canvas.getBoundingClientRect().width;
+const ctx = canvas.getContext("2d")
+
 const entitiesRes = await fetch(`${API_URL}/arena/entities`)
 const entities = await entitiesRes.json()
 
@@ -45,6 +49,7 @@ for(let entity of entities) {
 spawnForm.addEventListener("submit", async e => {
     e.preventDefault();
     const data = Object.fromEntries(Array.from(new FormData(spawnForm).entries()).map(([key, value]) => [key, parseFloat(value)]))
+    console.log(data)
     const answ = await fetch(`${API_URL}/arena/entities`, {
         method: "POST",
         body: JSON.stringify(data),
@@ -61,26 +66,38 @@ spawnForm.addEventListener("submit", async e => {
 })
 
 
-const arenaStatus = await fetch(`${API_URL}/arena`);
-const arenaData = await arenaStatus.json()
-
-statusDiv.innerHTML = arenaData.status
-statusDiv.classList.add(arenaData.status)
-
-if(arenaData.status == "close") {
-    for(let field of spawnForm.querySelectorAll("select, input, button")) {
-        field.disabled = true;
+fetch(`${API_URL}/arena`).then(ans => ans.json())
+.then(json => {
+    statusDiv.innerHTML = json.status
+    statusDiv.classList.add(json.status)
+    if(json.status == "close") {
+        for(let field of spawnForm.querySelectorAll("select, input, button")) {
+            field.disabled = true;
+        }
     }
-}
+})
 
-/*
-<tr>
-    <td><img src="assets/mob.svg" alt="" /></td>
-    <td>Armadillo</td>
-    <td>155.6</td>
-    <td>245.2</td>
-    <td>0</td>
-    <td><button class="delete-btn" mob-id="0">DELETE</button></td>
-</tr>
-*/
+addEventListener("resize", e => {
+    canvas.width = canvas.getBoundingClientRect().width;
+})
 
+ctx.textBaseline = "middle";
+ctx.textAlign = "center";
+ctx.lineWidth = "1"
+
+fetch(`${API_URL}/arena/entities`).then(ans => ans.json())
+.then(json => {
+    for(let mob of json) {
+        const textWidth = ctx.measureText(`${mob.x}, ${mob.z}`).width
+        const parsedX = (mob.x / 37) * canvas.width
+        const parsedZ = (mob.z / 16) * canvas.height
+        ctx.fillStyle = "#D9D9D9"
+        ctx.strokeStyle = "#8E8E8E"
+        ctx.drawImage(Object.assign(new Image(), {src: mob.entity.icon}), parsedX, parsedZ, 32, 32)
+        ctx.fillRect(parsedX+24, parsedZ-8, textWidth + 16, 16);
+        ctx.strokeRect(parsedX+24, parsedZ-8, textWidth + 16, 16);
+        ctx.fillStyle = "#000000"
+        ctx.strokeStyle = "#000000"
+        ctx.fillText(`${mob.x}, ${mob.z}`, parsedX+24+((textWidth + 16) / 2), parsedZ)
+    }
+})
