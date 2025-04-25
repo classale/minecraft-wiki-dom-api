@@ -155,11 +155,26 @@ thead tr th {
     white-space: nowrap;
 }
 
+tr > td > * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: none;
+    max-width: 100%;
+    display: block;
+}
 
 
 td, th {
     text-align: center;
     font-size: 16px;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: none;
+}
+
+td {
+    display: flex;
+    justify-content: center;
 }
 
 td img, th img {
